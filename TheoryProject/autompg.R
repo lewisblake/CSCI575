@@ -25,7 +25,6 @@ X_test_mat = as.matrix(sapply(X_test, as.numeric))
 y_test_mat = as.matrix(sapply(y_test, as.numeric)) 
 
 # train a random forest regression
-
 r.forest = regression_forest(X_train_mat, y_train_mat, num.trees = 10000)
 #c.forest = custom_forest(X_train_mat, y_train_mat)
 r.forest_pred = predict(r.forest, estimate.variance = TRUE)
@@ -58,7 +57,5 @@ ggplot(ordered.test.df, aes(x = mpg,  y = predictions)) +
   geom_point(size = 1) +
   geom_errorbar(aes(ymax = max, ymin = min))+
   geom_abline(intercept = 0, lty = 3)
-
-
 
 
